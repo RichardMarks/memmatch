@@ -1,7 +1,7 @@
 {
-  "name": "mem-match",
+  "name": "memmatch",
   "version": "1.0.0",
-  "description": "memory match",
+  "description": "Provides a robust memory matching backend that can be used to create memory match games",
   "main": "build/memmatch.js",
   "scripts": {
     "start": "webpack --progress --colors --watch",
@@ -9,8 +9,21 @@
     "prebuild": "rm -rf ./build",
     "prepublish": "npm run build"
   },
+  "keywords": [
+    "memory",
+    "matching",
+    "games",
+    "es6",
+    "memorymatch",
+    "memory match",
+    "matching game"
+  ],
   "author": "Richard Marks <ccpsceo@gmail.com> (http://www.ccpssolutions.com)",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RichardMarks/memmatch.git"
+  },
   "devDependencies": {
     "babel-core": "^6.13.2",
     "babel-loader": "^6.2.5",
