@@ -1,6 +1,6 @@
 {
   "name": "memmatch",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Provides a robust memory matching backend that can be used to create memory match games",
   "main": "build/memmatch.js",
   "scripts": {
