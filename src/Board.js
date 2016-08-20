@@ -191,7 +191,7 @@ export class Board extends EventBroadcaster {
       }
 
       layout.forEach((rowLayout, row) => {
-        if (row.length !== this._columns) {
+        if (rowLayout.length !== this._columns) {
           reject(`Board layout does not have correct number of columns in row ${row}. Found ${rowLayout.length} of ${this._columns} columns in layout.`);
         }
         rowLayout.forEach((type, column) => {
