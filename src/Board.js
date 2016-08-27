@@ -84,9 +84,9 @@ class BoardSelectionEvent extends BoardEvent {
 }
 
 class BoardMatchEvent extends BoardEvent {
-  constructor({ type, first, second, match = false }) {
+  constructor({ type, pair, match = false }) {
     super(type);
-    this.pair = { first, second };
+    this.pair = pair;
     this.match = match;
   }
 }
