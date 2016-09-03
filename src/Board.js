@@ -68,6 +68,7 @@ export const BoardEvents = {
 class BoardEvent {
   constructor(type) {
     this.type = type;
+    window.console.warn(`Creating ${this}`);
   }
   toString() {
     return `BoardEvent [${this.type.toUpperCase()}]`;
@@ -150,18 +151,24 @@ export class Board extends EventBroadcaster {
     this.broadcast(new BoardSelectionEvent({ type: BoardEvents.DESELECT }));
   }
 
-  select({ column, row }) {
+  select({ column, row, autoEval = false }) {
     if (this._first && this._second) {
       this.deselect();
     }
     if (this._first) {
       this._second = this._getTile(column, row);
       this.broadcast(new BoardSelectionEvent({ type: BoardEvents.SELECT_SECOND, column, row, selection: this._second }));
-      this._evaluateSelection();
+      if (autoEval) {
+        this._evaluateSelection();
+      }
     } else {
       this._first = this._getTile(column, row);
       this.broadcast(new BoardSelectionEvent({ type: BoardEvents.SELECT_FIRST, column, row, selection: this._first }));
     }
+  }
+
+  evaluate() {
+    this._evaluateSelection();
   }
 
   shuffle({ iterations }) {
